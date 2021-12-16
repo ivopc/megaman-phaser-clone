@@ -1,7 +1,12 @@
-export function createAndLoadAnim (this: Phaser.GameObjects.Sprite, { animName, frames, repeat, frameRate }): void {
+export function createAndLoadAnim (
+    this: Phaser.GameObjects.Sprite, 
+    { animName, frames, repeat, frameRate }, 
+    key?: string): void {
+    console.log(key);
+    key = key || this.texture.key;
     this.scene.anims.create({
-        key: this.texture.key + "_" + animName,
-        frames: [ ... Array(frames)].map((_, index) => ({ key: this.texture.key, frame: `${animName}${index}` })),
+        key: key + "_" + animName,
+        frames: [ ... Array(frames - 1)].map((_, index) => ({ key, frame: `${animName}${index}` })),
         repeat,
         frameRate
     });

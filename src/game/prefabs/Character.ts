@@ -59,27 +59,39 @@ export default class Character extends Phaser.Physics.Matter.Sprite {
         this.isEnableToJump = true;
     }
 
-    fire () {
-        this.projectiles.push(new Projectile(this.scene, this, this.facing));
+    fire (): Projectile {
+        const projectile = new Projectile(this.scene, this, this.facing);
+        this.projectiles.push(projectile);
+        return projectile;
     }
 
     addAnims () {
         [
             {
                 animName: "idle",
-                frames: 8,
+                frames: 9,
                 repeat: -1,
                 frameRate: 16
             },
             {
                 animName: "walk",
-                frames: 10,
+                frames: 11,
                 repeat: -1,
                 frameRate: 16
+            },
+            {
+                animName: "fire_basic",
+                frames: 5,
+                repeat: 1,
+                frameRate: 16
+            },
+            {
+                animName: "fire_powerful_loading",
+                frames: 4,
+                repeat: -1,
+                frameRate: 5
             }
-        ].forEach(createAndLoadAnim, this);
-        this.playAnim("idle");
-        
+        ].forEach(anim => createAndLoadAnim.bind(this)(anim));
     }
 
     playAnim (anim: string) {

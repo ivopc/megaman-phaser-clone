@@ -1560,7 +1560,7 @@
           "h": 43
         }
       },
-      "sprite79": {
+      "fire_basic0": {
         "frame": {
           "x": 96,
           "y": 181,
@@ -1600,7 +1600,7 @@
           "h": 41
         }
       },
-      "sprite81": {
+      "fire_basic1": {
         "frame": {
           "x": 131,
           "y": 184,
@@ -1660,7 +1660,7 @@
           "h": 38
         }
       },
-      "sprite84": {
+      "fire_basic2": {
         "frame": {
           "x": 171,
           "y": 186,
@@ -1680,7 +1680,7 @@
           "h": 37
         }
       },
-      "sprite85": {
+      "fire_basic3": {
         "frame": {
           "x": 213,
           "y": 187,
@@ -1700,7 +1700,7 @@
           "h": 36
         }
       },
-      "sprite86": {
+      "fire_basic4": {
         "frame": {
           "x": 259,
           "y": 187,
@@ -3540,7 +3540,7 @@
           "h": 48
         }
       },
-      "sprite178": {
+      "fire_powerful_loading1": {
         "frame": {
           "x": 512,
           "y": 462,
@@ -3820,7 +3820,7 @@
           "h": 41
         }
       },
-      "sprite192": {
+      "fire_powerful_loading0": {
         "frame": {
           "x": 466,
           "y": 468,
@@ -3840,7 +3840,7 @@
           "h": 41
         }
       },
-      "sprite193": {
+      "fire_powerful_loading2": {
         "frame": {
           "x": 574,
           "y": 468,
@@ -3860,7 +3860,7 @@
           "h": 41
         }
       },
-      "sprite194": {
+      "fire_powerful_loading3": {
         "frame": {
           "x": 655,
           "y": 468,
@@ -12520,7 +12520,7 @@
           "h": 1
         }
       },
-      "sprite627": {
+      "powerful_fire14": {
         "frame": {
           "x": 911,
           "y": 1216,
@@ -12540,7 +12540,7 @@
           "h": 60
         }
       },
-      "sprite628": {
+      "powerful_fire13": {
         "frame": {
           "x": 851,
           "y": 1217,
@@ -12560,7 +12560,7 @@
           "h": 58
         }
       },
-      "sprite629": {
+      "powerful_fire12": {
         "frame": {
           "x": 793,
           "y": 1218,
@@ -12580,7 +12580,7 @@
           "h": 56
         }
       },
-      "sprite630": {
+      "powerful_fire11": {
         "frame": {
           "x": 739,
           "y": 1220,
@@ -12600,7 +12600,7 @@
           "h": 52
         }
       },
-      "sprite631": {
+      "powerful_fire0": {
         "frame": {
           "x": 97,
           "y": 1222,
@@ -12660,7 +12660,7 @@
           "h": 12
         }
       },
-      "sprite634": {
+      "powerful_fire1": {
         "frame": {
           "x": 247,
           "y": 1222,
@@ -12680,7 +12680,7 @@
           "h": 48
         }
       },
-      "sprite635": {
+      "powerful_fire2": {
         "frame": {
           "x": 297,
           "y": 1222,
@@ -12700,7 +12700,7 @@
           "h": 48
         }
       },
-      "sprite636": {
+      "powerful_fire3": {
         "frame": {
           "x": 347,
           "y": 1222,
@@ -12720,7 +12720,7 @@
           "h": 48
         }
       },
-      "sprite637": {
+      "powerful_fire5": {
         "frame": {
           "x": 445,
           "y": 1222,
@@ -12740,7 +12740,7 @@
           "h": 48
         }
       },
-      "sprite638": {
+      "powerful_fire7": {
         "frame": {
           "x": 543,
           "y": 1222,
@@ -12760,7 +12760,7 @@
           "h": 48
         }
       },
-      "sprite639": {
+      "powerful_fire9": {
         "frame": {
           "x": 641,
           "y": 1222,
@@ -12780,7 +12780,7 @@
           "h": 48
         }
       },
-      "sprite640": {
+      "powerful_fire4": {
         "frame": {
           "x": 397,
           "y": 1223,
@@ -12800,7 +12800,7 @@
           "h": 46
         }
       },
-      "sprite641": {
+      "powerful_fire6": {
         "frame": {
           "x": 495,
           "y": 1223,
@@ -12820,7 +12820,7 @@
           "h": 46
         }
       },
-      "sprite642": {
+      "powerful_fire8": {
         "frame": {
           "x": 593,
           "y": 1223,
@@ -12840,7 +12840,7 @@
           "h": 46
         }
       },
-      "sprite643": {
+      "powerful_fire10": {
         "frame": {
           "x": 691,
           "y": 1223,

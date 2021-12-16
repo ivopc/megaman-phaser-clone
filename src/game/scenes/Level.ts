@@ -22,17 +22,12 @@ export default class Level extends Phaser.Scene {
 
     create () {
         globalThis.debug = this;
-        
-        console.log('group', this.matter.world.nextGroup());
-        console.log('category', this.matter.world.nextCategory());
-        
         this.events.on("register-to-destroy", this.registerDestroy, this);
         this.matter.world.setBounds(0, 0, 1920, 1080);
         this.player = new Player(this);
         this.cursos = this.input.keyboard.createCursorKeys();
-        this.input.keyboard.on("keydown-Z", this.player.fire, this.player);
         this.matter.world.on("collisionstart", this.onCollisionStart, this);
-        console.log(this.matter.world.getAllBodies().map(({ collisionFilter: { mask } }) => mask ));
+        //console.log(this.matter.world.getAllBodies().map(({ collisionFilter: { mask } }) => mask ));
         
     }
     
@@ -47,7 +42,7 @@ export default class Level extends Phaser.Scene {
             this.player.move(Facing.Left);
         } else if (this.cursos.right.isDown) {
             this.player.move(Facing.Right);
-        } else {
+        } else if (!this.player.isPlayingPowerfulFire) {
             this.player.playAnim("idle");
         };
         if (this.cursos.up.isDown) {
@@ -56,11 +51,6 @@ export default class Level extends Phaser.Scene {
     }
 
     onCollisionStart (event, collA, collB) {
-        if (collB.label.startsWith("projectile-")) {
-            console.log('player ou parede', collA.collisionFilter);
-            console.log('projectile', collB.collisionFilter);
-            
-        };
         if (collB.label.startsWith("projectile-") && collA.label !== "player") {
             this.events.emit("register-to-destroy", collB.label);
         };
@@ -75,7 +65,5 @@ function destroyBody (this: Level, label: string) {
     //@ts-ignore
     body.gameObject?.destroy();
 };
-
-
 
 const WORLD_LABEL = "Rectangle Body";

@@ -8,6 +8,7 @@ Player extends Character:
 [x] Super tiro
 [-] Escalar parede
 [-] Mudar de metahuman
+[-] Dash
 
 Enemy extends Character:
 [-] Perseguir Player

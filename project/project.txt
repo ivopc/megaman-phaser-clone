@@ -1,0 +1,14 @@
+Character:
+[x] Se mexer
+[x] Pular
+[4/5] Atirar (Falta atirar corretamente com colisão certinha)
+
+
+Player extends Character:
+[x] Super tiro
+[-] Escalar parede
+[-] Mudar de metahuman
+
+Enemy extends Character:
+[-] Perseguir Player
+[-] Atacar Player

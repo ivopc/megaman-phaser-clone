@@ -4,33 +4,41 @@ import Projectile from "./Projectile";
 
 import { createAndLoadAnim } from "../utils/anim";
 
+import { Facing } from "../consts/Character";
+
+// import { CATEGORY_WORLD_BOUNDS, CATEGORY_CHARACTERS } from "../consts/Collision";
 
 export default class Character extends Phaser.Physics.Matter.Sprite {
 
     public isEnableToJump: boolean;
     public projectiles: Array<Projectile>;
+    public facing: number;
 
     constructor (scene: Phaser.Scene, label: string) {
         super(scene.matter.world, 50, 50, "px-player", "", { label });
         this
             .setSize(36, 39)
             .setScale(4)
-            .setFixedRotation()
-            .addAnims();
+            .setFixedRotation();
+        // this.setCollisionCategory(CATEGORY_CHARACTERS);
+        // this.setCollidesWith(CATEGORY_WORLD_BOUNDS);
+        this.addAnims();
         this.isEnableToJump = true;
         this.projectiles = [];
+        this.facing = Facing.Right;
         scene.add.existing(this);
     }
 
-    move (direction: string) {
+    move (direction: number) {
+        this.facing = direction;
         switch (direction) {
-            case "left": {
+            case Facing.Left: {
                 this.flipX = true;
                 this.setVelocityX(-10);
                 this.playAnim("walk");
                 break;
             };
-            case "right": {
+            case Facing.Right: {
                 this.flipX = false;
                 this.setVelocityX(10);
                 this.playAnim("walk");
@@ -52,7 +60,7 @@ export default class Character extends Phaser.Physics.Matter.Sprite {
     }
 
     fire () {
-        this.projectiles.push(new Projectile(this.scene, this, Phaser.Utils.String.UUID()));
+        this.projectiles.push(new Projectile(this.scene, this, this.facing));
     }
 
     addAnims () {

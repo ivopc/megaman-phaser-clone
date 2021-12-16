@@ -1,15 +1,25 @@
 import Phaser from "phaser";
 
+import { Facing } from "../consts/Character";
 import { createAndLoadAnim } from "../utils/anim";
 
+import { CATEGORY_WORLD_BOUNDS, CATEGORY_PLAYER_ATTACK } from "../consts/Collision";
+
 export default class Projectile extends Phaser.Physics.Matter.Sprite {
-    constructor (scene: Phaser.Scene, parent: Phaser.Physics.Matter.Sprite, label: string) {
-        super(scene.matter.world, parent.x + 200, parent.y, "misc", "", { label });
+    
+    public direction: number;
+    
+    constructor (scene: Phaser.Scene, parent: Phaser.Physics.Matter.Sprite, direction: number) {
+        super(scene.matter.world, parent.x, parent.y, "misc", "", { label: "projectile-" + Phaser.Utils.String.UUID() });
         this
             .setFixedRotation()
             .setScale(2)
             .setIgnoreGravity(true);
+        this.setCollisionGroup(CATEGORY_PLAYER_ATTACK);
+        this.setCollisionCategory(CATEGORY_PLAYER_ATTACK);
+        this.setCollidesWith(CATEGORY_WORLD_BOUNDS);
         this.addAnims();
+        this.direction = direction === Facing.Right ? VELOCITY : -VELOCITY;
         scene.add.existing(this);
     }
 
@@ -25,6 +35,8 @@ export default class Projectile extends Phaser.Physics.Matter.Sprite {
 
     preUpdate (time, delta) {
         super.preUpdate(time, delta);
-        this.setVelocityX(5);
+        this.setVelocityX(this.direction);
     }
 };
+
+const VELOCITY = 15;

@@ -1,3 +1,7 @@
+System:
+
+Level Design:
+
 Character:
 [x] Se mexer
 [x] Pular
@@ -13,3 +17,8 @@ Player extends Character:
 Enemy extends Character:
 [-] Perseguir Player
 [-] Atacar Player
+
+
+Script:
+
+Maker:
